@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:melodio/view_model/splash_view_model.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
+
+  static const String name = '/';
 
   @override
   State<SplashView> createState() => _SplashViewState();
 }
 
 class _SplashViewState extends State<SplashView> {
-
+  final splashViewModel = Get.put(SplashViewModel());
 
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
     super.initState();
+    splashViewModel.loadView();
   }
 
   @override
@@ -22,7 +27,10 @@ class _SplashViewState extends State<SplashView> {
     var media = MediaQuery.sizeOf(context);
     return Scaffold(
       body: Center(
-        child: Image.asset("assets/img/app_logo.png", width: media.width * 0.35,),
+        child: Image.asset(
+          "assets/img/app_logo.png",
+          width: media.width * 0.35,
+        ),
       ),
     );
   }
