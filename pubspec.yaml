@@ -1,0 +1,36 @@
+name: melodio
+description: "Melodio is a lightweight and elegant offline music player that lets you enjoy your favorite songs stored on your device. With a clean design, powerful equalizer, playlists, and support for multiple formats, Melodio makes listening to music simple and enjoyable—anytime, anywhere."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  get: ^4.7.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/img/
+
+  fonts:
+    - family: Circular Std
+      fonts:
+        - asset: assets/fonts/CircularStd-Book.otf
+        - asset: assets/fonts/CircularStd-Medium.otf
+          weight: 600
+        - asset: assets/fonts/CircularStd-Bold.otf
+          weight: 700
+        - asset: assets/fonts/CircularStd-Black.otf
+          weight: 800
