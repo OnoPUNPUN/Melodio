@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:melodio/common/color_extension.dart';
+import 'package:melodio/view/home/home_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -37,13 +38,11 @@ class _MainTabViewState extends State<MainTabView>
     return Scaffold(
       body: TabBarView(
         controller: _tabController,
-        children: [Container(
-          child: Center(child: Text("Home")),
-        ), Container(
-          child: Center(child: Text("Songs")),
-        ), Container(
-          child: Center(child: Text("Settings")),
-        )],
+        children: [
+          const HomeView(),
+          Container(child: Center(child: Text("Songs"))),
+          Container(child: Center(child: Text("Settings"))),
+        ],
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -53,8 +52,8 @@ class _MainTabViewState extends State<MainTabView>
               color: Colors.black38,
               blurRadius: 5,
               offset: Offset(0, -3),
-            )
-          ]
+            ),
+          ],
         ),
         child: BottomAppBar(
           color: Colors.transparent,
