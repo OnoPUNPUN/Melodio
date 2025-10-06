@@ -7,6 +7,7 @@ import 'package:melodio/common_widgets/songs_row.dart';
 import 'package:melodio/common_widgets/title_section.dart';
 import 'package:melodio/common_widgets/view_all_section.dart';
 import 'package:melodio/view_model/home_view_model.dart';
+import 'package:melodio/view_model/splash_view_model.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -25,7 +26,9 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: TColor.bg,
         elevation: 0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.find<SplashViewModel>().openDrawer();
+          },
           icon: Image.asset(
             "assets/img/menu.png",
             width: 25,
