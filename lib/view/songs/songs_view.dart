@@ -69,9 +69,11 @@ class _SongsViewState extends State<SongsView>
       body: Column(
         children: [
           SizedBox(
-            height: kToolbarHeight,
+            height: kToolbarHeight - 15,
             child: TabBar(
               indicatorColor: TColor.focus,
+              indicatorPadding: const EdgeInsets.symmetric(horizontal: 20),
+              isScrollable: true,
               labelStyle: TextStyle(
                 color: TColor.focus,
                 fontSize: 15,
