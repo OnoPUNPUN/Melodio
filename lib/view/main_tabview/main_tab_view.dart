@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:melodio/common/color_extension.dart';
 import 'package:melodio/view/home/home_view.dart';
+import 'package:melodio/view/songs/songs_view.dart';
 import 'package:melodio/view_model/splash_view_model.dart';
 
 class MainTabView extends StatefulWidget {
@@ -262,7 +263,7 @@ class _MainTabViewState extends State<MainTabView>
         controller: _tabController,
         children: [
           const HomeView(),
-          Container(child: Center(child: Text("Songs"))),
+          const SongsView(),
           Container(child: Center(child: Text("Settings"))),
         ],
       ),
