@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:melodio/common/color_extension.dart';
+import 'package:melodio/common_widgets/icon_text_row.dart';
 import 'package:melodio/view/home/home_view.dart';
 import 'package:melodio/view/settings/settings_view.dart';
 import 'package:melodio/view/songs/songs_view.dart';
@@ -110,149 +111,58 @@ class _MainTabViewState extends State<MainTabView>
               ),
             ),
 
-            ListTile(
-              leading: Image.asset(
-                "assets/img/m_theme.png",
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                "Themes",
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+            IconTextRow(
+              title: 'Themes',
+              icon: "assets/img/m_theme.png",
               onTap: () {
                 splashVM.closeDrawer();
               },
             ),
-            Divider(color: TColor.primaryText.withOpacity(0.07), indent: 70),
-
-            ListTile(
-              leading: Image.asset(
-                "assets/img/m_ring_cut.png",
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                "Ringtone Cutter",
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+            IconTextRow(
+              title: 'Ringtone Cutter',
+              icon: "assets/img/m_ring_cut.png",
               onTap: () {
                 splashVM.closeDrawer();
               },
             ),
-
-            Divider(color: TColor.primaryText.withOpacity(0.07), indent: 70),
-
-            ListTile(
-              leading: Image.asset(
-                "assets/img/m_sleep_timer.png",
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                "Sleep Timer",
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+            IconTextRow(
+              title: 'Sleep Timer',
+              icon: "assets/img/m_sleep_timer.png",
               onTap: () {
                 splashVM.closeDrawer();
               },
             ),
-
-            Divider(color: TColor.primaryText.withOpacity(0.07), indent: 70),
-
-            ListTile(
-              leading: Image.asset(
-                "assets/img/m_eq.png",
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                "Equalizer",
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+            IconTextRow(
+              title: 'Equalizer',
+              icon: "assets/img/m_eq.png",
               onTap: () {
                 splashVM.closeDrawer();
               },
             ),
-            Divider(color: TColor.primaryText.withOpacity(0.07), indent: 70),
-
-            ListTile(
-              leading: Image.asset(
-                "assets/img/m_driver_mode.png",
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                "Driver Mode",
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+            IconTextRow(
+              title: 'Driver Mode',
+              icon: "assets/img/m_driver_mode.png",
               onTap: () {
                 splashVM.closeDrawer();
               },
             ),
-            Divider(color: TColor.primaryText.withOpacity(0.07), indent: 70),
-
-            ListTile(
-              leading: Image.asset(
-                "assets/img/m_hidden_folder.png",
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                "Hidden Folder",
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+            IconTextRow(
+              title: 'Hidden Folder',
+              icon: "assets/img/m_hidden_folder.png",
               onTap: () {
                 splashVM.closeDrawer();
               },
             ),
-            Divider(color: TColor.primaryText.withOpacity(0.07), indent: 70),
-
-            ListTile(
-              leading: Image.asset(
-                "assets/img/m_scan_media.png",
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                "Scan Media",
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+            IconTextRow(
+              title: 'Hidden Folder',
+              icon: "assets/img/m_hidden_folder.png",
+              onTap: () {
+                splashVM.closeDrawer();
+              },
+            ),
+            IconTextRow(
+              title: 'Scan Media',
+              icon: "assets/img/m_scan_media.png",
               onTap: () {
                 splashVM.closeDrawer();
               },
@@ -262,11 +172,7 @@ class _MainTabViewState extends State<MainTabView>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
-          const HomeView(),
-          const SongsView(),
-          const SettingsView(),
-        ],
+        children: [const HomeView(), const SongsView(), const SettingsView()],
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
