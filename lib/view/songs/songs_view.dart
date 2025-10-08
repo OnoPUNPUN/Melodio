@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:melodio/common/color_extension.dart';
+import 'package:melodio/view/songs/all_songs_view.dart';
+import 'package:melodio/view/songs/play_list_view.dart';
 import 'package:melodio/view_model/splash_view_model.dart';
 
 class SongsView extends StatefulWidget {
@@ -98,8 +100,8 @@ class _SongsViewState extends State<SongsView>
             child: TabBarView(
               controller: _tabController,
               children: [
-                Center(child: Text("All Sogns")),
-                Center(child: Text("Playlist")),
+                const AllSongsView(),
+                const PlayListView(),
                 Center(child: Text("Albums")),
                 Center(child: Text("Artist")),
                 Center(child: Text("Genres")),
