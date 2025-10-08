@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:melodio/common/color_extension.dart';
 import 'package:melodio/view/home/home_view.dart';
+import 'package:melodio/view/settings/settings_view.dart';
 import 'package:melodio/view/songs/songs_view.dart';
 import 'package:melodio/view_model/splash_view_model.dart';
 
@@ -264,7 +265,7 @@ class _MainTabViewState extends State<MainTabView>
         children: [
           const HomeView(),
           const SongsView(),
-          Container(child: Center(child: Text("Settings"))),
+          const SettingsView(),
         ],
       ),
       bottomNavigationBar: Container(
