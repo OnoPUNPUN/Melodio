@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:melodio/common_widgets/my_playlist_cell.dart';
+import 'package:melodio/common_widgets/play_list_songs_cell.dart';
 import 'package:melodio/common_widgets/view_all_section.dart';
 import 'package:melodio/view_model/play_list_view_model.dart';
 
@@ -17,6 +18,14 @@ class _PlayListViewState extends State<PlayListView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color(0xff23273B),
+        onPressed: () {},
+        child: Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Image.asset("assets/img/add.png"),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,11 +44,10 @@ class _PlayListViewState extends State<PlayListView> {
                 ),
                 itemBuilder: (context, index) {
                   var pOj = plVM.paylistArr[index];
-                  return Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
-                      color: Colors.red,
-                    ),
+                  return PlayListSongsCell(
+                    pObj: pOj,
+                    onPressed: () {},
+                    onPressedPlay: () {},
                   );
                 },
               ),
