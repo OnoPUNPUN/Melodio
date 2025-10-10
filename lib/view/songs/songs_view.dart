@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:melodio/common/color_extension.dart';
+import 'package:melodio/view/songs/albums_view.dart';
 import 'package:melodio/view/songs/all_songs_view.dart';
 import 'package:melodio/view/songs/play_list_view.dart';
 import 'package:melodio/view_model/splash_view_model.dart';
@@ -102,7 +103,7 @@ class _SongsViewState extends State<SongsView>
               children: [
                 const AllSongsView(),
                 const PlayListView(),
-                Center(child: Text("Albums")),
+                const AlbumsView(),
                 Center(child: Text("Artist")),
                 Center(child: Text("Genres")),
               ],
