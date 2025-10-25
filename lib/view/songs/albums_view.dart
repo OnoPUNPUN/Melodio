@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:melodio/common_widgets/albums_cell.dart';
@@ -35,7 +36,11 @@ class _AlbumsViewState extends State<AlbumsView> {
             return AlbumsCell(
               aObj: aObj,
               onPressed: () {},
-              onPressedMenu: () {},
+              onPressedMenu: (selectedIndex) {
+                if (kDebugMode) {
+                  print(index);
+                }
+              },
             );
           },
         ),
