@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:melodio/common_widgets/albums_cell.dart';
+import 'package:melodio/view/songs/album_details_view.dart';
 import 'package:melodio/view_model/albums_view_model.dart';
 
 class AlbumsView extends StatefulWidget {
@@ -35,7 +36,9 @@ class _AlbumsViewState extends State<AlbumsView> {
             var aObj = albumVM.allList[index];
             return AlbumsCell(
               aObj: aObj,
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => const AlbumDetailView());
+              },
               onPressedMenu: (selectedIndex) {
                 if (kDebugMode) {
                   print(index);
